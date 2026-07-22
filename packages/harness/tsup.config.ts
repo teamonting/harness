@@ -4,7 +4,7 @@ import overrideConfig from './tsup.config.override.ts';
 const baseConfig: Options = {
   dts: true,
   entry: {
-    'harness': './src/index.ts'
+    index: './src/index.ts'
   },
   sourcemap: true
 };
