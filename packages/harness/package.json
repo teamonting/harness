@@ -52,6 +52,7 @@
   "devDependencies": {
     "@happy-dom/global-registrator": "^20.11.0",
     "@onting/common": "^0.0.0-0",
+    "@onting/rpc": "^0.3.0",
     "@onting/test-harness": "^0.0.0-0",
     "@testduet/given-when-then": "^0.1.0",
     "@tsconfig/recommended": "^1.0.13",
@@ -66,5 +67,17 @@
     "typescript": "^7.0.2"
   },
   "license": "MIT",
-  "pinDependencies": {}
+  "pinDependencies": {},
+  "peerDependencies": {
+    "@onting/stub": "^0.1.0-main",
+    "selenium-webdriver": "^4.46.0"
+  },
+  "dependencies": {
+    "@onting/browser": "^0.1.0-main.202607200610.7cb91d7",
+    "ci-info": "^4.4.0",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "term-img": "^7.1.0",
+    "valibot": "^1.4.2"
+  }
 }
