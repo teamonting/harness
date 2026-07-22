@@ -7,6 +7,12 @@ services:
       SE_OPTS: '--log-level WARNING'
       SE_NODE_GRID_URL: 'http://localhost:4444'
       SE_NODE_SESSION_TIMEOUT: '10'
+    # Cannot use pipe operator in CMD.
+    # healthcheck:
+    #   test: ["CMD", "curl", "-fsS", "http://localhost:4444/wd/hub/status", "|", "jq", "'if .value.ready == true then empty else error() end'"]
+    #   interval: 2s
+    #   timeout: 2s
+    #   retries: 5
     ports:
       - '4444:4444'
       - '7900:7900'
