@@ -38,12 +38,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/compulim/harness.git"
+    "url": "https://github.com/teamonting/harness.git"
   },
   "bugs": {
-    "url": "https://github.com/compulim/harness/issues"
+    "url": "https://github.com/teamonting/harness/issues"
   },
-  "homepage": "https://github.com/compulim/harness#readme",
+  "homepage": "https://github.com/teamonting/harness#readme",
   "localPeerDependencies": {
     "@onting/common": "0.0.0-0",
     "@onting/test-harness": "0.0.0-0"
