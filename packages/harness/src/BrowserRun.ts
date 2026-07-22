@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import { buildDriverService, buildWebDriver, type DriverService } from '@onting/browser/builder.js';
 import { WebDriverSession } from '@onting/browser/WebDriverSession.js';
 import { type AnyStub, type StubImplementation } from '@onting/rpc';

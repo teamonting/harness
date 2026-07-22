@@ -1,3 +1,5 @@
+/// <reference types="node" />
+
 import type { SnapshotStore } from '@onting/stub';
 import { isCI } from 'ci-info';
 import { readFile, writeFile } from 'node:fs/promises';
