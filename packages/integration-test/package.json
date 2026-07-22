@@ -15,7 +15,8 @@
     "bump": "npm run bump:prod && npm run bump:dev",
     "bump:dev": "PACKAGES_TO_BUMP=$(cat package.json | jq -r '(.pinDependencies // {}) as $P | (.localPeerDependencies // {}) as $L | (.devDependencies // {}) | to_entries | map(select(.key as $K | $L | has($K) | not)) | map(.key + \"@\" + ($P[.key] // [\"latest\"])[0]) | join(\" \")') && [ ! -z \"$PACKAGES_TO_BUMP\" ] && npm install $PACKAGES_TO_BUMP || true",
     "bump:prod": "PACKAGES_TO_BUMP=$(cat package.json | jq -r '(.pinDependencies // {}) as $P | (.localPeerDependencies // {}) as $L | (.dependencies // {}) | to_entries | map(select(.key as $K | $L | has($K) | not)) | map(.key + \"@\" + ($P[.key] // [\"latest\"])[0]) | join(\" \")') && [ ! -z \"$PACKAGES_TO_BUMP\" ] && npm install $PACKAGES_TO_BUMP || true",
-    "docker": "docker compose up --quiet-pull --scale chromium=4",
+    "docker": "docker compose up --quiet-pull",
+    "docker:down": "docker compose down",
     "postscaffold": "npm run postscaffold:dev --if-present && npm run postscaffold:prod --if-present",
     "postscaffold:dev": "npm install --save-dev @onting/common@0.0.0-0 @happy-dom/global-registrator @tsconfig/strictest expect resolve-cwd typescript",
     "postscaffold:prod": "npm install --save @onting/test-harness@0.0.0-0 @onting/harness@0.0.0-0",
@@ -38,6 +39,7 @@
     "@onting/common": "^0.0.0-0",
     "@tsconfig/strictest": "^2.0.8",
     "expect": "^30.4.1",
+    "is-ci": "^4.1.0",
     "resolve-cwd": "^3.0.0",
     "typescript": "^7.0.2"
   },
