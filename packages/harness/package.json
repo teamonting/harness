@@ -73,7 +73,7 @@
     "selenium-webdriver": "^4.46.0"
   },
   "dependencies": {
-    "@onting/browser": "^0.1.0-main.202607200610.7cb91d7",
+    "@onting/browser": "^0.1.0",
     "ci-info": "^4.4.0",
     "pixelmatch": "^7.2.0",
     "pngjs": "^7.0.0",
