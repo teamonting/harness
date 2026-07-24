@@ -12,7 +12,7 @@ test('should run with custom stub implementation', async () => {
   const run = isCI
     ? new BrowserRun('http://teamonting.github.io/browser/', {
         stubImplementation,
-        webDriverURL: 'http://localhost:4444/wd/hub'
+        ...(isCI ? { webDriverURL: 'http://localhost:4444/wd/hub' } : {})
       })
     : new BrowserRun('http://teamonting.github.io/browser/', {
         stubImplementation
@@ -22,16 +22,11 @@ test('should run with custom stub implementation', async () => {
 });
 
 test('should run with default stub implementation', async () => {
-  const run = isCI
-    ? new BrowserRun('http://teamonting.github.io/browser/', {
-        snapshotPrefix: 'default',
-        testFilePath: fileURLToPath(import.meta.url),
-        webDriverURL: 'http://localhost:4444/wd/hub'
-      })
-    : new BrowserRun('http://teamonting.github.io/browser/', {
-        snapshotPrefix: 'default',
-        testFilePath: fileURLToPath(import.meta.url)
-      });
+  const run = new BrowserRun('http://teamonting.github.io/browser/', {
+    snapshotPrefix: 'default',
+    testFilePath: fileURLToPath(import.meta.url),
+    ...(isCI ? { webDriverURL: 'http://localhost:4444/wd/hub' } : {})
+  });
 
   await run.promise;
 });
