@@ -21,7 +21,6 @@ import {
   picklist,
   pipe,
   readonly,
-  record,
   safeParse,
   string,
   union,
@@ -37,7 +36,7 @@ import unmarshalError, { errorLikeSchema } from './private/unmarshalError.ts';
 
 const stubImplementationSchema = pipe(
   object({
-    ['~types']: object({ Stub: record(string(), function_()) }),
+    // `~types` is a type-only brand (`{ Stub: undefined }` at runtime) and is not validated.
     implement: function_(),
     keys: array(string())
   }),
